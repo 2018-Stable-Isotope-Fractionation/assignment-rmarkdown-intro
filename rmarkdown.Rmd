@@ -1,0 +1,122 @@
+---
+title: "R tutorial"
+author: "Sebastian Kopf"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+**R markdown** is a version of Markdown that is expanded to support running R code
+in between your text. The blocks of R code are called `chunks` and you can treat
+them as individual little segments of code, you can jump back and forth between them,
+run just individual ones or run all of them when you click the **Knit** button - this
+will generate a document that includes both content as well as the output of any
+embedded R code chunks within the document. This is an R code chunk:
+
+## Assigning values
+
+```{r my-first-chunk}
+# the <- operator assigns the variable on the pointy side of the arrow the
+# value on the other side
+data <- faithful # assign the built-in faithful data set to the data variable
+
+# use ? (or help()) to get help about functions and data sets
+?faithful
+
+# use the print function to output what is in data
+print(data)
+```
+
+#### Excercise
+
+
+```{r "my-own-chunk"}
+# assign the variable x a value of 5 and print the value of x
+
+```
+
+## The pipe operator
+
+The pipe operator `%>%` is a a very useful alternative to passing arguments between functions. It is ideal for chaining together multiple commands. 
+
+```{r}
+# R libraries provide additional functionality not included in the core and can
+# be loaded as the functionality becomes needed
+library(magrittr) # load the magrittr library to include the pipe operator
+
+# the following is equivalent
+summary(data) # same syntax as used above
+data %>% summary() # pipe syntax
+
+# the advantage of the pipe is easy changing, here we use the head function
+# (?head for help) to get the first couple of data points in our data set and
+# then print it out
+print(head(data))
+
+# instead of the infintie russian doll of (((()))) as operations become more
+# complicated, the pipe makes this much easier to read
+# --> the follwing is EQUIVALENT to the above:
+data %>% head() %>% print()
+
+# or spaced out over multiple rows
+data %>% # pipe the data to the head function
+  # returns the first couple of rows of the data set and pipes them onward
+  head() %>%
+  # print function receives the output from the head function via the pipe
+  # and prints it
+  print()
+```
+
+#### Exercise
+
+```{r}
+# the runif function returns random numbers from a uniform distribution
+# use the pipe to pass your value of x to the runif function
+
+# repeat the same but now pipe it onward to the summary function
+
+```
+
+```{r}
+# now assign a new value of 10000 to the x function and rerun your command
+
+```
+
+
+## Text output
+
+You can also print out your data in a nice table format if you want to include it in
+your document:
+
+```{r, results="asis"}
+library(knitr) # load the knitr library
+data %>%
+  # get the first couple of rows
+  head() %>%
+  # use the kable function to make a nice table showing 2 significant digits
+  kable(digits = 2)
+```
+
+Or you can print out the value of a variable in your text, say the value of $\pi$
+with 4 significant digits: `r signif(pi, 4)` or the number of data points in
+your data set: `r nrow(data)`.
+
+## Standard plots
+
+And of course you can embed plots, for example:
+
+```{r my-plot, echo=FALSE, fig.width=8, fig.height=6}
+plot(data)
+```
+
+Notice that the chunk options `fig.width` and `fig.height` are providing additional details on how the plot in the chunk should be displayed in the knitted report. The option `echo=FALSE` indicates that the code chunk itself should not be displayed in the final report. We will make more complex plots later, but that's it for now.
+
+## Additional
+
+For additional information on R and R markdown, there are lots of great resources on the internet and the R user community is very active and extremely helpful. Often, googling what you'd like to achieve will provide a good starting point but I can also recommend the following resources specifically:
+
+ - [different R cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+ - [older R reference manual](http://cran.r-project.org/doc/contrib/Short-refcard.pdf) (a great overview of many useful R commands)
+ - [R coding overview compiled by Sebastian](https://paper.dropbox.com/doc/Getting-started-with-R-BJ4pKzfZhBYxfdB6RowE0)
+ - [R for Data Science online book](http://r4ds.had.co.nz/)
+ - [RMarkdown code chunk options](http://yihui.name/knitr/options/)
+ - [Stack Overflow](http://stackoverflow.com/) (a Q&A site for programming, searching for answers here often provides very helpful information)
