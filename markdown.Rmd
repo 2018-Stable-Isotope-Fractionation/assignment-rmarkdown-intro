@@ -1,0 +1,68 @@
+---
+title: "Markdown tutorial"
+author: "Sebastian Kopf"
+output: html_document
+---
+
+This tutorial provides an introduction to [R markdown](http://rmarkdown.rstudio.com/). **Markdown** is a very basic and easy-to-use syntax for styling written documents. It's very easy to make some words **bold** and other words *italic* with Markdown. You can even link to [CU](http://www.colorado.edu/)!
+
+`Exercise 1:`
+
+ - *knit* (=render) this document by clicking the **Knit** dropdown above the code
+
+# Headers
+
+Sometimes it's useful to have different levels of headings to structure your documents.
+Start lines with a `#` to create headings. Multiple `##` in a row denote smaller heading sizes.
+
+You can use  one `#` all the way up to `######` six for different heading sizes.
+
+If you'd like to include a quote, use the > character before the line:
+
+> My Software never has bugs. It just develops random features.
+
+Exercise 1:
+
+# Lists
+
+Sometimes you need numbered lists (here to some useful resources for markdown):
+
+1. [Markdown Basics from R-Studio](http://rmarkdown.rstudio.com/authoring_basics.html)
+1. [Mastering Markdown from GitHub](https://guides.github.com/features/mastering-markdown/) (this is where most of the examples above come from)
+
+And sometimes you want bullet points (the kind of things you can do with R markdown
+if you want to go beyond the basics):
+
+- [Lots of options for embedded R code](http://rmarkdown.rstudio.com/authoring_rcodechunks.html) (more details below)
+- [Bibliographies and References](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
+- [Interactive Documents](http://rmarkdown.rstudio.com/authoring_shiny.html)
+- And if you have sub points, put two spaces before:
+    - Like this
+    - And this
+
+# Equations
+
+Equation support can be very handy if you need to provide some formulas in your
+text, just use $\LaTeX$ [math](https://en.wikibooks.org/wiki/LaTeX/Mathematics): $x=\sum\beta\frac{\pi^2}{\gamma_i}$
+
+Or more complicated large ones:
+
+$$
+f(n) =
+  \begin{cases}
+    n/2       & \quad \text{if } n \text{ is even}\\
+    -(n+1)/2  & \quad \text{if } n \text{ is odd}\\
+  \end{cases}
+$$
+
+
+
+# Images
+
+If you want to embed images, this is how you do it:
+
+![Pluto loves you](http://i.space.com/images/i/000/048/999/i02/pluto-new-horizons-july-2015.jpg?1437582878)
+
+And now time for a horizontal break and off to R!
+
+------

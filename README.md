@@ -16,9 +16,15 @@ This is the `README` for the intro to RMarkdown (and use of the R Server with Gi
 3. Check-out this repository (still all in the terminal):
   - make sure you are at the top level of your folder structure by checking that the command prompt shows `[YOURUSERNAME@rstudiogeo ~]$` with the `~` indicating that you are at the top level of your home directory - if you are in a subdirectory, execute `cd ..` until you reach the above prompt
   - at the top of this repository click on the green **Clone or download** button and copy the shown link to the clipboard
-  - in your R Server terminal, type `git clone ` and paste the copied link right after (so it says something to the effect `git clone https://github.com/......git`), then execute the commmand (this creates a local copy of your GitHub repository)
-  - 
+  - in your R Server terminal, type `git clone ` and paste the copied link right after (so it says something to the effect `git clone https://github.com/......git`), then execute the commmand (this creates a local copy of your GitHub repository and you should see the new folder in your directory tree in the **Files** tab on the right)
+4. Load project:
+ - click the blue Project dropdown button in the upper right corner (underneath your user name and the red power button) and chose **Open Project**
+ - navigate to the new project folder and selec the `project.Rproj` file inside it
+ - this will load a new RSession rooted in the new project folder (you will see this project now selected in the Project dropdown)
 
 ## Exercise
 
-Fill out the questions in the [`assignment.md`](assignment.md) (the [video tutorial](https://youtu.be/bRkpm1LTpkY) will be a useful starting point but note that the assignment questions are slightly different than those covered in the tutorial).
+1. Markdown continued: open the `markdown.Rmd` file in your R Server session and complete the exercises
+2. RMarkdown: complete the exercises in `exercises.Rmd` (don't forget to commit your changes)
+3. Push all your changes to GitHub and submit your exercise by the usual way: file a pull request on GitHub to merge the `master` into the `submit` branch (i.e. base = `submit`)
+
