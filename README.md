@@ -28,3 +28,6 @@ This is the `README` for the intro to RMarkdown (and use of the R Server with Gi
 2. RMarkdown: complete the exercises in `exercises.Rmd` (don't forget to commit your changes)
 3. Push all your changes to GitHub and submit your exercise by the usual way: file a pull request on GitHub to merge the `master` into the `submit` branch (i.e. base = `submit`)
 
+## Additional Notes
+
+If you want to synchronize a repository also with your local desktop, you can do so easily using [GitHubDesktop](github.md).
