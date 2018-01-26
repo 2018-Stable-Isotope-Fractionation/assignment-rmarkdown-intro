@@ -1,6 +1,6 @@
-# Introduction to RMarkdown
+# Introduction to RMarkdown / RStudio Server
 
-This is the `README` for the intro to RMarkdown (and use of the R Server with Git) exercise.
+This is the `README` for the intro to RMarkdown and use of the R Server with Git exercise.
 
 ## Setup
 
@@ -28,8 +28,6 @@ This is the `README` for the intro to RMarkdown (and use of the R Server with Gi
 2. RMarkdown: complete the exercises in `markdown.Rmd` (don't forget to commit your changes)
 3. Isotopia: complete the exercises in `isotopia.Rmd` (don't forget to commit your changes)
 4. Submit: push all your changes to GitHub and submit your exercise by the usual way: file a pull request on GitHub to merge the `master` into the `submit` branch (i.e. base: `submit`)
-5. Check-in: please fill out the [check-in for week 1](https://goo.gl/forms/Jnb2ZrOHwu7lMhiE2)
-
 
 ## Additional Notes
 
