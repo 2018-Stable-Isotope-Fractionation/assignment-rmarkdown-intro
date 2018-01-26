@@ -1,11 +1,11 @@
-# RMarkdown exercise
+# Introduction to RMarkdown
 
 This is the `README` for the intro to RMarkdown (and use of the R Server with Git) exercise.
 
 ## Setup
 
 1. Login: log into the [R Server](http://moab.colorado.edu:8787) with your username and password
-2. Setup Git: 
+2. Setup Git:
   - find the Terminal tab at the bottom of the IDE (interactive development environment). This is a simple linux command prompt.
   - execute the following commands (with the proper replacements) to set up your github credentials:
   - `git config --global credential.helper store`
@@ -22,7 +22,7 @@ This is the `README` for the intro to RMarkdown (and use of the R Server with Gi
  - navigate to the new project folder and selec the `project.Rproj` file inside it
  - this will load a new RSession rooted in the new project folder (you will see this project now selected in the Project dropdown)
 
-## Exercise
+## Assignment
 
 1. Markdown continued: open the `markdown.Rmd` file in your R Server session and complete the exercises
 2. RMarkdown: complete the exercises in `markdown.Rmd` (don't forget to commit your changes)
@@ -34,3 +34,10 @@ This is the `README` for the intro to RMarkdown (and use of the R Server with Gi
 ## Additional Notes
 
 If you want to synchronize a repository also with your local desktop, you can do so easily using [GitHubDesktop](github.md).
+
+
+## Resources
+
+ - [RStudio cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+ - [RMarkdown cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+ - [Latex math cheat sheet](https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf)
