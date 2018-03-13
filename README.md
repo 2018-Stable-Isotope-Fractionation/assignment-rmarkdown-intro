@@ -13,9 +13,10 @@ This is the `README` for the intro to RMarkdown and use of the R Server with Git
   - `git config --global user.email "YOUREMAIL"`
   - `git config --global user.name "YOURNAME"`
   - double check that the configuration is all correct by executing `git config --list`
-3. Check-out this repository (still all in the terminal):
-  - make sure you are at the top level of your folder structure by checking that the command prompt shows `[YOURUSERNAME@rstudiogeo ~]$` with the `~` indicating that you are at the top level of your home directory - if you are in a subdirectory, execute `cd ..` until you reach the above prompt
-  - at the top of this repository click on the green **Clone or download** button and copy the shown link to the clipboard
+3. Check-out this repository:
+  - if you have an open project in your RStudio Server, close it by choosing **Close Project** from the Project dropdown button in the upper right corner (it should say `Project: (None)` afterwards)
+  - switch back to the terminal tab and make sure you are at the top level of your folder structure by checking that the command prompt shows `[YOURUSERNAME@rstudiogeo ~]$` with the `~` indicating that you are at the top level of your home directory - if you are in a subdirectory, execute `cd ..` until you reach the above prompt
+  - at the top of this repository's GitHub page, click on the green **Clone or download** button and copy the shown link to the clipboard
   - in your R Server terminal, type `git clone ` and paste the copied link right after (so it says something to the effect `git clone https://github.com/......git`), then execute the commmand (this creates a local copy of your GitHub repository and you should see the new folder in your directory tree in the **Files** tab on the right)
 4. Load project:
  - click the blue Project dropdown button in the upper right corner (underneath your user name and the red power button) and chose **Open Project**
