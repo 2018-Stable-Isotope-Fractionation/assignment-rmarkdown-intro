@@ -2,7 +2,15 @@
 title: "Isotopia tutorial"
 author: "Sebastian Kopf"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  html_document: 
+    df_print: paged
+    toc: yes
+    toc_depth: 2
+    toc_float: true
+    code_folding: show
+editor_options:
+  chunk_output_type: console
 ---
 
 ```{r, echo=FALSE}
@@ -11,7 +19,7 @@ library(magrittr)
 ```
 
 
-# [isotopia](https://github.com/sebkopf/isotopia)
+## [isotopia](https://github.com/sebkopf/isotopia)
 
 In stable isotope geochemical calculations, we use a number of different representations of isotopic information and processes (ratios, abundances, delta values, alpha values, epsilon values, fractionation factors, refereence frame shifts, mass balance calculations, mass-independent effects, etc., etc.) that are constantly being converted back and forth and used for different kinds of isotope arithmetic. Very frequently, the tangle of keeping track of this information and how all the calculations are done properly makes code very hard to read, difficult to communicate - or even understand oneself later on, and as anyone knows who's ever dropped a -1 or x1000 at the wrong place, prone to small mistakes that can make an enormous difference. The `isotopia` library is designed to make this a little bit easier for routine operations.
 
@@ -21,9 +29,9 @@ After *isotopia* is installed, it can be loaded at any time like any other R mod
 
 ```{r data-types}
 library(isotopia)
-ratio(0.1) %>% print()
-abundance(c(0.1, 0.2), notation="raw") %>% print()
-delta(100, notation = "permil") %>% print()
+ratio(0.1)
+abundance(c(0.1, 0.2), notation="raw")
+delta(100, notation = "permil")
 ```
 
 
@@ -32,7 +40,7 @@ delta(100, notation = "permil") %>% print()
 All data types have certain attributes that are stored with the data values. For example, an isotope ratio can specify what minor and major isotope it represents and what compound it belongs to.
 
 ```{r}
-ratio(`13C` = 0.011, major = "12C", compound = "CO2") %>% print()
+ratio(`13C` = 0.011, major = "12C", compound = "CO2")
 ```
 
 All attributes can also be changed on an already initialized object using the set_attrib() function. However, changing previously defined attributes will always trigger a warning to alert the user to the fact that they are overwriting an attribute.
@@ -44,7 +52,7 @@ r <- ratio(`18O` = 0.002, major = "16O", compound = "CO2")
 r <- r %>% set_attrib(minor = "17O")
 # equivalent to the above without the pipe (%>%) notation:
 r <- set_attrib(r, minor = "17O")
-r %>% print()
+r
 ```
 
 There are also a large number of safeguards in place that trigger errors if non-sensical isotope values are initialized (for example a negative isotope ratio or alpha fractionation factor).
@@ -53,9 +61,9 @@ There are also a large number of safeguards in place that trigger errors if non-
 
 ```{r}
 # The seq (?seq) function generates a sequence of numbers as follows:
-seq(from = 0.005, to = 0.02, by = 0.001) %>% print()
+seq(from = 0.005, to = 0.02, by = 0.001)
 
-# use the seq, the pipe operator (%>%), the ratio function and the set_attrib() function to make a ratio for minor isotope 13C and major 12C. At first just print it, then store it in the variable r instead of printing it.
+# use the seq, the pipe operator (%>%), the ratio function and the set_attrib() function to make a ratio for minor isotope 13C and major 12C - store it in the variable `r` and output it to console.
 
 ```
 
@@ -66,9 +74,9 @@ Closely related to the attributes system is the notation system implemented in `
 
 ```{r}
 d <- delta(-15, notation = "permil")
-d %>% print()
-d %>% switch_notation("raw") %>% print()
-d %>% switch_notation("ppm") %>% print()
+d
+d %>% switch_notation("raw")
+d %>% switch_notation("ppm")
 ```
 
 It is important to note that of course all of these values are equivalent, they are just representions of the same fractionation factor in different notation. Accordingly, they behave **exactly** the same in all calculations implemented by `isotopia` regardless what notation they are in.
@@ -79,10 +87,10 @@ It is possible to interconvert the different types of isotope information (abund
 
 ```{r}
 ab <- abundance(1, notation = "percent")
-ab %>% print()
+ab
 
 # convert ot ratio
-ab %>% to_ratio() %>% print()
+ab %>% to_ratio()
 
 # conver to delta value using the built-in standard for 13C as reference
 ab %>% 

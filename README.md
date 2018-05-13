@@ -25,9 +25,9 @@ This is the `README` for the intro to RMarkdown and use of the R Server with Git
 
 ## Assignment
 
-1. Markdown continued: open the `markdown.Rmd` file in your R Server session and complete the exercises
-2. RMarkdown: complete the exercises in `markdown.Rmd` (don't forget to commit your changes)
-3. Isotopia: complete the exercises in `isotopia.Rmd` (don't forget to commit your changes)
+1. Markdown continued: open the [`markdown.Rmd`](markdown.Rmd) file in your R Server session and complete the exercises
+2. RMarkdown: complete the exercises in [`rmarkdown.Rmd`](rmarkdown.Rmd) (don't forget to commit your changes)
+3. Isotopia: complete the exercises in [`isotopia.Rmd`](isotopia.Rmd) (don't forget to commit your changes)
 4. Submit: push all your changes to GitHub and submit your exercise by the usual way: file a pull request on GitHub to merge the `master` into the `submit` branch (i.e. base: `submit`)
 
 ## Additional Notes
