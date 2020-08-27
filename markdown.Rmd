@@ -4,7 +4,7 @@ author: "Sebastian Kopf"
 output: html_document
 ---
 
-This tutorial provides an introduction to [R markdown](http://rmarkdown.rstudio.com/). **Markdown** is a very basic and easy-to-use syntax for styling written documents. It's very easy to make some words **bold** and other words *italic* with Markdown. You can even link to [CU](http://www.colorado.edu/)!
+This tutorial provides an introduction to [R markdown](http://rmarkdown.rstudio.com/). **Markdown** is a very basic and easy-to-use syntax for styling written documents. It's very easy to make some words **bold** and other words *italic* with Markdown. You can also easily link to places like [NASA](https://www.nasa.gov/)!
 
 
 `Exercise 1:`
@@ -72,8 +72,9 @@ $$
 
 If you want to embed images, this is how you do it:
 
-![Pluto loves you](http://i.space.com/images/i/000/048/999/i02/pluto-new-horizons-july-2015.jpg?1437582878)
+![Pluto still loves you](http://i.space.com/images/i/000/048/999/i02/pluto-new-horizons-july-2015.jpg?1437582878)
+
+------
 
 And now time for a horizontal break and off to R!
 
-------

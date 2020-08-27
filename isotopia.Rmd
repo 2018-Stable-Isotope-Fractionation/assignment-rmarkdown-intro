@@ -10,32 +10,36 @@ output:
     toc_float: true
     code_folding: show
 editor_options:
-  chunk_output_type: console
+  chunk_output_type: inline
 ---
 
-```{r, echo=FALSE}
-# load standard libraries used
-library(magrittr)
+```{r setup, message = FALSE}
+# load tidyverse packages
+library(tidyverse)
 ```
 
 
-## [isotopia](https://github.com/sebkopf/isotopia)
+# [isotopia](https://isotopia.isoverse.org/)
 
-In stable isotope geochemical calculations, we use a number of different representations of isotopic information and processes (ratios, abundances, delta values, alpha values, epsilon values, fractionation factors, refereence frame shifts, mass balance calculations, mass-independent effects, etc., etc.) that are constantly being converted back and forth and used for different kinds of isotope arithmetic. Very frequently, the tangle of keeping track of this information and how all the calculations are done properly makes code very hard to read, difficult to communicate - or even understand oneself later on, and as anyone knows who's ever dropped a -1 or x1000 at the wrong place, prone to small mistakes that can make an enormous difference. The `isotopia` library is designed to make this a little bit easier for routine operations.
+In stable isotope geochemical calculations, we use a number of different representations of isotopic information and processes (ratios, abundances, delta values, alpha values, epsilon values, fractionation factors, reference frame shifts, mass balance calculations, mass-independent effects, etc., etc.) that are constantly being converted back and forth and used for different kinds of isotope arithmetic. Very frequently, the tangle of keeping track of this information and how all the calculations are done properly makes code very hard to read, difficult to communicate - or even understand oneself later on, and as anyone knows who's ever dropped a -1 or x1000 at the wrong place, prone to small mistakes that can make an enormous difference. The `isotopia` library is designed to make this a little bit easier for routine operations.
 
-## Data types
+```{r load, message = FALSE}
+# load the isotopia library
+library(isotopia)
+```
 
-After *isotopia* is installed, it can be loaded at any time like any other R module using ```library(isotopia)```. The basic data types are initialized simply by calling the respective ```ratio```, ```abundance``` and ```delta``` functions with single or multiple values.
+# Data types
+
+The basic data types are initialized simply by calling the respective `ratio`, `abundance` and `delta` functions with single or multiple values.
 
 ```{r data-types}
-library(isotopia)
 ratio(0.1)
 abundance(c(0.1, 0.2), notation="raw")
 delta(100, notation = "permil")
 ```
 
 
-#### Attributes
+### Attributes
 
 All data types have certain attributes that are stored with the data values. For example, an isotope ratio can specify what minor and major isotope it represents and what compound it belongs to.
 
@@ -57,7 +61,7 @@ r
 
 There are also a large number of safeguards in place that trigger errors if non-sensical isotope values are initialized (for example a negative isotope ratio or alpha fractionation factor).
 
-#### Exercise
+### Exercise
 
 ```{r}
 # The seq (?seq) function generates a sequence of numbers as follows:
@@ -68,7 +72,7 @@ seq(from = 0.005, to = 0.02, by = 0.001)
 ```
 
 
-## Notation
+# Notation
 
 Closely related to the attributes system is the notation system implemented in `isotopia`. Notation is special because it is an attribute that, when changed, also changes the numerical value of an isotope object with it. All isotope value objects keep track internally what notation they are in, which allows them to be used correctly in any operations and conversions completely independent of what notation the user prefers to work in. Notation is first specified when an isotope value object is initialized and several different notations are implemented for the different isotope value objects. For details on available notation, look at the `?switch_notation` help.
 
@@ -81,7 +85,7 @@ d %>% switch_notation("ppm")
 
 It is important to note that of course all of these values are equivalent, they are just representions of the same fractionation factor in different notation. Accordingly, they behave **exactly** the same in all calculations implemented by `isotopia` regardless what notation they are in.
 
-## Conversions
+# Conversions
 
 It is possible to interconvert the different types of isotope information (abundance, delta, ratio, etc.).
 
@@ -104,7 +108,7 @@ You can get a list of all built in standards using `get_standards()`, see ?get_s
 get_standards()
 ```
 
-#### Exercise
+### Exercise
 
 ```{r}
 # use the ratios you generated earlier (stored in variable r) and conver them to a delta value using the 13C standard
