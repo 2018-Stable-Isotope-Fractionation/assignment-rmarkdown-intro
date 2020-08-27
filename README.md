@@ -6,7 +6,7 @@ This is the `README` for the intro to RMarkdown and use of the R Server with Git
 
 1. if you have an open project in your RStudio Server, close it by choosing **Close Project** from the Project dropdown button in the upper right corner (it should say `Project: (None)` afterwards)
 2. switch to the terminal tab and go to the home directory by executing `cd`
-3. clone this repository
+3. `git clone` this repository
 4. load the new project by navigating to and clicking on the `project.Rproj` file
   
 ## Assignment
