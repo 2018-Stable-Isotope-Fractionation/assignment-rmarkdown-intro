@@ -1,8 +1,0 @@
----
-title: "Links to view assignment exercises"
-output: html_document
----
-
- - view [Markdown](markdown.html) exercise
- - view [RMarkdown](rmarkdown.html) exercise
- - view [Isotopia](isotopia.html) exercise
